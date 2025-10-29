@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { ApolloProvider } from '@/components/providers/apollo-provider'
+import { ApolloProvider } from '@/providers'
 import './globals.scss'
 
 const geistSans = Geist({
@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Tasks Demo',
-  description: 'Aplicação de tarefas com Next.js e Apollo Client'
+  title: 'My TodoList',
+  description:
+    'Uma aplicação para você gerenciar suas tarefas de forma simples e eficiente!'
 }
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-import { TaskList } from '@/components/tasks'
+import { TaskList } from './task-list'
 import styles from './page.module.scss'
 import { Topbar } from '@/components/topbar'
 

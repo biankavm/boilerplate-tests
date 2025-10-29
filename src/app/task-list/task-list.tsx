@@ -3,8 +3,8 @@
 import { useQuery } from '@apollo/client/react'
 import { GET_TASKS } from '@/graphql'
 import { GetTasksData } from '@/types/graphql'
-import { TaskItem } from './task-item'
-import { CreateTask } from './create-task'
+import { TaskItem } from '@/components/tasks'
+import { CreateTask } from '@/components/tasks'
 import styles from './task-list.module.scss'
 
 export function TaskList() {
