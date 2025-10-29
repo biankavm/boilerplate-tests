@@ -6,5 +6,13 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   transform: {
     '^.+\\.(t|j)sx?$': ['@swc/jest']
-  }
+  },
+  moduleNameMapper: {
+    '\\.(css|scss|sass)$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
+  roots: ['<rootDir>/src'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@apollo|graphql|identity-obj-proxy)/)'
+  ]
 }

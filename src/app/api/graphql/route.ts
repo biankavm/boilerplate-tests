@@ -3,13 +3,13 @@ import { NextRequest, NextResponse } from 'next/server'
 let tasks = [
   {
     id: '1',
-    title: 'Tarefa exemplo 1',
+    title: 'Estudar React',
     completed: false,
     createdAt: new Date().toISOString()
   },
   {
     id: '2',
-    title: 'Tarefa exemplo 2',
+    title: 'Desenvolver testes da TodoList',
     completed: true,
     createdAt: new Date().toISOString()
   }
@@ -18,14 +18,14 @@ let tasks = [
 let users = [
   {
     id: '1',
-    name: 'João Silva',
-    email: 'joao@example.com',
+    name: 'Bianka',
+    email: 'bianka@example.com',
     createdAt: new Date().toISOString()
   },
   {
     id: '2',
-    name: 'Maria Santos',
-    email: 'maria@example.com',
+    name: 'Ayrton',
+    email: 'ayrton@example.com',
     createdAt: new Date().toISOString()
   }
 ]
