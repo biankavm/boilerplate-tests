@@ -23,6 +23,11 @@ const eslintConfig = [
       'build/**',
       'next-env.d.ts'
     ]
+  },
+  {
+    rules: {
+      'prefer-const': 'off'
+    }
   }
 ]
 
