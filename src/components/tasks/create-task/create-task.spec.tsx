@@ -39,6 +39,7 @@ describe('CreateTask', () => {
 
   it('should have a correctly placeholder in input', () => {
     renderComp()
+
     expect(
       screen.getByPlaceholderText(/digite uma nova tarefa/i)
     ).toBeInTheDocument()
@@ -49,27 +50,28 @@ describe('CreateTask', () => {
 
     renderComp({ title: taskTitle })
 
-    const user = userEvent.setup()
+    const user = userEvent.setup() // criando instância de usuário (com contexto próprio)
+
     const input = screen.getByPlaceholderText(/digite uma nova tarefa/i)
     const button = screen.getByRole('button', { name: /criar/i })
 
-    // simula o usuário preenchendo o input
-    await user.type(input, taskTitle)
+    expect(button).toBeDisabled() // botão começa desabilitado
 
-    expect(button).not.toBeDisabled() // botão começa desabilitado
+    // simula o usuário preenchendo o input
+    await userEvent.type(input, taskTitle)
+
+    expect(button).not.toBeDisabled() // após o usuário digitar, habilitamos
+
     expect(input).toHaveValue(taskTitle) // após o usuário digitar, o input tem o valor da task
 
     await user.click(button)
     expect(button).toHaveTextContent('Criando...') // botão muda para "Criando..."
 
-    // após mutation ser executada, o input é limpo
+    // após criar a task, o input é limpo
     // waitFor: é um método que espera uma condição ser true
-    await waitFor(
-      () => {
-        expect(input).toHaveValue('')
-        expect(button).toHaveTextContent('Criar')
-      },
-      { timeout: 3000 }
-    )
+    await waitFor(() => {
+      expect(input).toHaveValue('')
+      expect(button).toHaveTextContent('Criar')
+    })
   })
 })
