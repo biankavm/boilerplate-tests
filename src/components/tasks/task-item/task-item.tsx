@@ -40,7 +40,9 @@ export function TaskItem({ id, title, completed }: TaskItemProps) {
         disabled={isLoading}
         aria-label={`Marcar tarefa "${title}" como ${completed ? 'não concluída' : 'concluída'}`}
       />
+
       <span className={completed ? styles.completed : ''}>{title}</span>
+
       <button
         onClick={handleDelete}
         disabled={isLoading}

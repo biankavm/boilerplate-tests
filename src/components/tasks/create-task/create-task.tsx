@@ -16,9 +16,7 @@ export function CreateTask() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (title.trim()) {
-      createTask({ variables: { title: title.trim() } })
-    }
+    if (title.trim()) createTask({ variables: { title: title.trim() } })
   }
 
   return (
@@ -32,6 +30,7 @@ export function CreateTask() {
         className={styles.input}
         aria-label="Título da nova tarefa"
       />
+
       <button
         type="submit"
         disabled={loading || !title.trim()}

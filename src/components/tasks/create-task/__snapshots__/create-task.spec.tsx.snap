@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`CreateTask should render correctly 1`] = `
+<div>
+  <form
+    class="form"
+  >
+    <input
+      aria-label="Título da nova tarefa"
+      class="input"
+      placeholder="Digite uma nova tarefa..."
+      type="text"
+      value=""
+    />
+    <button
+      aria-label="Criar nova tarefa"
+      class="button"
+      disabled=""
+      type="submit"
+    >
+      Criar
+    </button>
+  </form>
+</div>
+`;

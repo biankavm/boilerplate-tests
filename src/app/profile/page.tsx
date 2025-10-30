@@ -5,9 +5,8 @@ import { useQuery } from '@apollo/client/react'
 import { GET_USER } from '@/graphql'
 import { GetUserData, GetUserVariables } from '@/types/graphql'
 import styles from './page.module.scss'
-import { Topbar } from '@/components/topbar'
 
-export default function ProfilePage() {
+function ProfilePage() {
   const [userId, setUserId] = useState('1')
   const { data, loading, error } = useQuery<GetUserData, GetUserVariables>(
     GET_USER,
@@ -19,7 +18,6 @@ export default function ProfilePage() {
 
   return (
     <>
-      <Topbar />
       <div className={styles.container}>
         <h1 className={styles.title}>Perfil do Usuário</h1>
 
@@ -80,3 +78,4 @@ export default function ProfilePage() {
     </>
   )
 }
+export default ProfilePage

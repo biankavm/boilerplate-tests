@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Topbar should render correctly 1`] = `
+<div>
+  <nav
+    class="nav"
+  >
+    <a
+      class="navLink"
+      href="/"
+    >
+      Tarefas
+    </a>
+    <a
+      class="navLink"
+      href="/profile"
+    >
+      Perfil
+    </a>
+  </nav>
+</div>
+`;
