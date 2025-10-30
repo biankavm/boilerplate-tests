@@ -1,7 +1,7 @@
 import { CreateTask } from './create-task'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { CREATE_TASK } from '@/graphql'
+import { CREATE_TASK, GET_TASKS } from '@/graphql'
 import { MockedProvider } from '@apollo/client/testing/react'
 
 const createTaskMock = (title: string) => ({
@@ -21,9 +21,28 @@ const createTaskMock = (title: string) => ({
   }
 })
 
+const getTasksMock = {
+  request: {
+    query: GET_TASKS,
+    variables: {}
+  },
+  result: {
+    data: {
+      tasks: [
+        {
+          id: '1',
+          title: 'Nova tarefa',
+          completed: false,
+          createdAt: '2024-01-01T00:00:00.000Z'
+        }
+      ]
+    }
+  }
+}
+
 describe('CreateTask', () => {
   const renderComp = ({ title = 'my task' }: { title?: string } = {}) => {
-    const mocks = title ? [createTaskMock(title)] : []
+    const mocks = title ? [createTaskMock(title), getTasksMock] : []
 
     return render(
       <MockedProvider mocks={mocks}>
