@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`TaskList should render correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="title"
+    >
+      Minhas Tarefas
+    </h1>
+    <div>
+       create task test
+    </div>
+    <div
+      class="list"
+      role="list"
+    >
+      <div>
+        1
+         
+        some title
+      </div>
+    </div>
+  </div>
+</div>
+`;
